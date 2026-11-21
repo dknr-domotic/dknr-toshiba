@@ -73,7 +73,7 @@ Toshiba bloque les accès trop fréquents : dans ce cas le projet suspend ses ac
 
 ### Pilotage
 
-Dans la page **Piloter**, chaque climatiseur a ses boutons. Le bouton coloré est la valeur actuelle : il change quand le climatiseur a confirmé la commande.
+Dans la page **Piloter**, chaque climatiseur a ses boutons. Avec plusieurs climatiseurs, une liste permet de choisir celui à afficher ; ce choix est gardé par navigateur. Le bouton coloré est la valeur actuelle : il change quand le climatiseur a confirmé la commande.
 
 * La **consigne** va de 17 à 30 °C, et de 5 à 13 °C avec la fonction hors gel 8 °C.
 * Certaines **fonctions** n'existent que dans certains modes : le hors gel, le mode sommeil et le chauffage au sol en mode chaud, par exemple. Seules celles du mode en cours sont proposées.
