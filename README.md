@@ -69,7 +69,7 @@ Le bouton **Déconnecter** efface le compte, son mot de passe, ses climatiseurs 
 
 Les changements d'état et les températures sont envoyés par Toshiba dès qu'ils se produisent. En complément, les climatiseurs sont relus toutes les 15 minutes, ainsi que leur consommation.
 
-Toshiba bloque les accès trop fréquents : dans ce cas le projet suspend ses lectures pendant 15 minutes. Le bouton **Actualiser** de la page **Piloter** demande une lecture immédiate (une par 20 secondes au plus).
+Toshiba bloque les accès trop fréquents : dans ce cas le projet suspend ses accès pendant le délai demandé par Toshiba, 15 minutes au plus. Le bouton **Actualiser** de la page **Piloter** demande une lecture immédiate (une par 20 secondes au plus).
 
 ### Pilotage
 

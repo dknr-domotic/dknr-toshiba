@@ -34,7 +34,7 @@ module.exports = {
   },
   functionExternalModules: true,
   functionTimeout: 0,
-  functionGlobalContext: { crypto: require("crypto") },
+  functionGlobalContext: { crypto: require("crypto"), https: require("https"), http: require("http") },
   ui: { path: "" },
   debugMaxLength: 1000,
   mqttReconnectTime: 15000,
