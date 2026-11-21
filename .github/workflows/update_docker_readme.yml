@@ -1,0 +1,17 @@
+# Shared workflow, see https://github.com/dknr-domotic/workflows
+name: Update Docker Hub Description
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - README.md
+  workflow_dispatch:
+
+jobs:
+  update_docker_readme:
+    permissions:
+      contents: read
+    uses: dknr-domotic/workflows/.github/workflows/update_docker_readme.yml@master
+    secrets: inherit

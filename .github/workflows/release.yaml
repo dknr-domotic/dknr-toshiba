@@ -1,0 +1,22 @@
+# Shared workflow, see https://github.com/dknr-domotic/workflows
+name: Build and push docker image release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        type: string
+        required: true
+
+jobs:
+  release:
+    permissions:
+      packages: write
+      contents: write
+      attestations: write
+      id-token: write
+    uses: dknr-domotic/workflows/.github/workflows/release.yaml@master
+    with:
+      version: ${{ inputs.version }}
+    secrets: inherit

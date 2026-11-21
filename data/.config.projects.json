@@ -1,0 +1,8 @@
+{
+    "projects": {
+        "DkToshiba": {
+            "credentialSecret": "dknr-toshiba"
+        }
+    },
+    "activeProject": "dknr-toshiba"
+}

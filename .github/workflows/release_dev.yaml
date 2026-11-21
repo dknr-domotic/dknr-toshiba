@@ -1,0 +1,17 @@
+# Shared workflow, see https://github.com/dknr-domotic/workflows
+name: Build and push docker dev image
+
+on:
+  schedule:
+  - cron: '30 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  release_dev:
+    permissions:
+      packages: write
+      contents: write
+      attestations: write
+      id-token: write
+    uses: dknr-domotic/workflows/.github/workflows/release_dev.yaml@master
+    secrets: inherit
