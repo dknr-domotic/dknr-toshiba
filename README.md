@@ -14,7 +14,15 @@ Toutes les informations sont regroupées sur votre serveur MQTT, dans la même a
 
 Ce projet n'est ni édité ni soutenu par Toshiba. L'API utilisée n'est pas publique, elle peut changer sans préavis.
 
-Version 0.1 : le projet débute, il est en cours de validation sur du matériel réel.
+La documentation détaillée est sur [dknr-domotic.github.io](https://dknr-domotic.github.io/sources/toshiba/).
+
+[![Dashboard Screenshot detail](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot.png)](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot.png)
+
+[![Dashboard Screenshot chart](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot2.png)](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot2.png)
+
+[![Dashboard Screenshot add](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot3.png)](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot3.png)
+
+[![Dashboard Screenshot mqtt](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot4.png)](https://github.com/dknr-domotic/dknr-toshiba/blob/master/sshot/dknr-toshiba_screenshot4.png)
 
 
 ## Fonctionnalités
