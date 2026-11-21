@@ -1729,13 +1729,22 @@
         "g": "587cdaf9e56c86ef",
         "type": "function",
         "name": "http",
-        "func": "// Send the request to Toshiba\n// The HTTP request node always adds a User-Agent, which Toshiba firewall refuses: the request is sent without it\n// output 1: answer (msg.statusCode, msg.payload, msg.headers)\n\nconst target = new URL(msg.url);\nconst lib = global.get(target.protocol === 'http:' ? 'http' : 'https');\nconst body = msg.method === 'POST' ? JSON.stringify(msg.payload) : '';\n\nlet headers = {};\nfor (const k in msg.headers) {\n    if (msg.headers[k] !== '') {\n        headers[k] = msg.headers[k];\n    }\n}\nif (body !== '') {\n    headers['Content-Length'] = Buffer.byteLength(body);\n}\n\nlet ended = false;\nfunction end(status, payload, answer) {\n    if (ended) {\n\n        return;\n    }\n    ended = true;\n    msg.statusCode = status;\n    msg.payload = payload;\n    msg.headers = answer || {};\n    node.send(msg);\n    node.done();\n}\n\nconst req = lib.request(target, { 'method': msg.method, 'headers': headers, 'timeout': msg.requestTimeout || 20000 }, res => {\n    let chunks = [];\n    res.on('data', c => chunks.push(c));\n    res.on('end', () => end(res.statusCode, Buffer.concat(chunks).toString(), res.headers));\n    res.on('error', e => end(undefined, String(e.message || e)));\n});\nreq.on('timeout', () => req.destroy(new Error('timeout')));\nreq.on('error', e => end(undefined, String(e.message || e)));\nreq.end(body);\n\nreturn;",
+        "func": "// Send the request to Toshiba\n// The HTTP request node always adds a User-Agent, which Toshiba firewall refuses: the request is sent without it\n// output 1: answer (msg.statusCode, msg.payload, msg.headers)\n\nconst target = new URL(msg.url);\n// http and https are modules of this node (Setup tab)\nconst lib = target.protocol === 'http:' ? http : https;\nconst body = msg.method === 'POST' ? JSON.stringify(msg.payload) : '';\n\nlet headers = {};\nfor (const k in msg.headers) {\n    if (msg.headers[k] !== '') {\n        headers[k] = msg.headers[k];\n    }\n}\nif (body !== '') {\n    headers['Content-Length'] = Buffer.byteLength(body);\n}\n\nlet ended = false;\nfunction end(status, payload, answer) {\n    if (ended) {\n\n        return;\n    }\n    ended = true;\n    msg.statusCode = status;\n    msg.payload = payload;\n    msg.headers = answer || {};\n    node.send(msg);\n    node.done();\n}\n\nconst req = lib.request(target, { 'method': msg.method, 'headers': headers, 'timeout': msg.requestTimeout || 20000 }, res => {\n    let chunks = [];\n    res.on('data', c => chunks.push(c));\n    res.on('end', () => end(res.statusCode, Buffer.concat(chunks).toString(), res.headers));\n    res.on('error', e => end(undefined, String(e.message || e)));\n});\nreq.on('timeout', () => req.destroy(new Error('timeout')));\nreq.on('error', e => end(undefined, String(e.message || e)));\nreq.end(body);\n\nreturn;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": []
+        "libs": [
+            {
+                "var": "https",
+                "module": "https"
+            },
+            {
+                "var": "http",
+                "module": "http"
+            }
+        ]
     },
     {
         "id": "bda08e2e15f75e69",
