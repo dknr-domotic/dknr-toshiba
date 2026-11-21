@@ -3449,7 +3449,7 @@
         "height": 0,
         "options": [
             {
-                "label": "Adresse e-mail du compte Toshiba Home AC Control",
+                "label": "Nom d'utilisateur Toshiba Home AC Control (pas l'adresse e-mail)",
                 "key": "user",
                 "type": "text",
                 "required": true,

@@ -57,7 +57,7 @@ Le conteneur doit pouvoir joindre `mobileapi.toshibahomeaccontrols.com` (port 44
 
 ### Connecter le compte
 
-Dans la page **Compte**, saisissez l'**adresse e-mail** et le **mot de passe** du compte Toshiba Home AC Control. Les climatiseurs du compte apparaissent ensuite dans la page **Piloter**, avec le nom donné dans l'application.
+Dans la page **Compte**, saisissez le **nom d'utilisateur** et le **mot de passe** du compte Toshiba Home AC Control. Le nom d'utilisateur est celui choisi à la création du compte dans l'application, ce n'est pas l'adresse e-mail. Les climatiseurs du compte apparaissent ensuite dans la page **Piloter**, avec le nom donné dans l'application.
 
 Toshiba ne fournit pas de jeton de session renouvelable : **le mot de passe est enregistré** dans le volume du conteneur, pour se reconnecter seul après un redémarrage ou quand Toshiba ferme la session. Si Toshiba refuse le mot de passe, il est effacé et le projet ne retente rien : il faut se reconnecter depuis la page **Compte**.
 
